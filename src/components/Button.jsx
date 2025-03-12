@@ -15,3 +15,5 @@ const Button = React.forwardRef(function Button(
         </button>
     );
 });
+
+export default Button;

@@ -1,14 +1,38 @@
 import React from "react";
-import LineNavigationbar from "./components/LineNavigationbar";
-
+import Layout from "./layouts/Layout";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { login, logout } from "./store/authSlice";
+import userService from "./services/user.service";
+import { use } from "react";
 
 function App() {
+  const [loader, setLoader] = React.useState(true);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    userService
+      .getCurrentUser()
+      .than((response) => {
+        if (response.data) {
+          dispatch(login(response.data));
+        } else {
+          dispatch(logout());
+        }
+      })
+      .catch((error) => {
+        console.log(`Error Getting Current User: ${error}`);
+      })
+      .finally(() => {
+        setLoader(false);
+      });
+  }, []);
 
   return (
     <>
-    <LineNavigationbar />
+      <Layout />
     </>
-  )
+  );
 }
 
 export default App;

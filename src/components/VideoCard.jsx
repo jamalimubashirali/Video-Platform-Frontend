@@ -23,3 +23,5 @@ const VideoCard = ({ video }) => {
         </div>
     );
 }
+
+export default VideoCard;
