@@ -1,10 +1,8 @@
 import React from "react";
 import Layout from "./layouts/Layout";
-import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { login, logout } from "./store/authSlice";
 import userService from "./services/user.service";
-import { use } from "react";
 
 function App() {
   const [loader, setLoader] = React.useState(true);

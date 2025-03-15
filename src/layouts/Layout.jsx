@@ -1,13 +1,13 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 
-const Layout = ({children}) => {
+const Layout = () => {
     const location = useLocation();
     const isLoginOrSignup = location.pathname === "/login" || location.pathname === "/register";
   return (
     <div>
       {!isLoginOrSignup && <Header />}
-      {children}
+      <Outlet />
       {!isLoginOrSignup && <Footer />}
     </div>
   )
