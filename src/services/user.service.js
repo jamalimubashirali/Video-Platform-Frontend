@@ -80,6 +80,7 @@ class User {
         }
     }
 
+
     async getWatchHistory(){
         try {
             const response = await axios.get(`${this.baseURL}/users/watch-history`, {
