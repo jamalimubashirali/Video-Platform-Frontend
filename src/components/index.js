@@ -2,7 +2,6 @@ import Button from './Button';
 import Dropdown from './Dropdown';
 import InputField from './InputField';
 import LineNavigationbar from './LineNavigationbar';
-import VideoCard from './VideoCard';
 import Container from './Container';
 import VideoCardListGrid from './VideoCardListGrid';
 import VideoCard from './VideoCard';
@@ -15,13 +14,18 @@ import Avatar from './Avatar';
 import CommentInput from './CommentInput';
 import VideoStats from './VideoStats';
 import VideoDesAndChannel from './VideoDesAndChannel';
+import Login from './Login';
+import Signup from './Signup';
+import UserChannelProfile from './UserChannelProfile';
+import PlaylistPage from './PlaylistPage';
+import Header from './Header';
+import Footer from './Footer';
 
 export {
     Button,
     Dropdown,
     InputField,
     LineNavigationbar,
-    VideoCard,
     Container,
     VideoCard,
     VideoCardListGrid,
@@ -33,5 +37,11 @@ export {
     CommentInput,
     Avatar,
     VideoStats,
-    VideoDesAndChannel
+    VideoDesAndChannel,
+    Login,
+    Signup,
+    PlaylistPage,
+    UserChannelProfile,
+    Header,
+    Footer
 }

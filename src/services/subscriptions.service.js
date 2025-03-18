@@ -44,6 +44,6 @@ class Subscription {
     }
 }
 
-const subscriptionService = Subscription();
+const subscriptionService = new Subscription();
 
 export default subscriptionService;

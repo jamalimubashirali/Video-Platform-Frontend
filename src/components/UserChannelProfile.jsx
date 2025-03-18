@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {Avatar, Button} from "./index";
-import userServices from "../services/userServices";
+import userServices from "../services/user.service";
 import subscriptionService from '../services/subscriptions.service';
 
 const UserChannelProfile = ({userId}) => {

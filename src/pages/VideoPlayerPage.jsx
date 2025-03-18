@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PlayListPage = () => {
+const VideoPlayerPage = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const PlayListPage = () => {
   )
 }
 
-export default PlayListPage;
+export default VideoPlayerPage;

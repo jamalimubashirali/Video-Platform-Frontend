@@ -1,7 +1,7 @@
-import React from "react";
+import React , {useEffect} from "react";
 import Layout from "./layouts/Layout";
 import { useDispatch } from "react-redux";
-import { login, logout } from "./store/authSlice";
+import { login, logout } from "./store/auth.slice";
 import userService from "./services/user.service";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     userService
       .getCurrentUser()
-      .than((response) => {
+      .then((response) => {
         if (response.data) {
           dispatch(login(response.data));
         } else {
