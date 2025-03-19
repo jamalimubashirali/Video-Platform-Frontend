@@ -7,20 +7,35 @@ const VideoCardListGrid = ({userId}) => {
     const [videos , setVideos]  = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    useEffect(() => {
-        ;(async () => {
-            try {
-                const videos = await videoService.getUserVideos(userId);
-                if(videos) {
-                    setVideos(videos);
-                    setLoading(false);
+    if(userId) {
+        useEffect(() => {
+            ;(async () => {
+                try {
+                    const videos = await videoService.getUserVideos(userId);
+                    if(videos) {
+                        setVideos(videos);
+                        setLoading(false);
+                    }
+                } catch (error) {
+                    setError(error);
                 }
-            } catch (error) {
-                setError(error);
-            }
-        })();
-    });
-
+            })();
+        });    
+    } else {
+        useEffect(() => {
+            ;(async () => {
+                try {
+                    const videos = await videoService.getAllVideos();
+                    if(videos) {
+                        setVideos(videos);
+                        setLoading(false);
+                    }
+                } catch (error) {
+                    setError(error);
+                }
+            })();
+        });
+    }
     if(loading) return <h1>Loading...</h1>;
 
   return error ? (

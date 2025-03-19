@@ -40,7 +40,7 @@ return (
                     placeholder={`Enter Full Name`}
                     {...register("fullname", { required: "This field is required" })}
                     ref={useRef()}
-                    className="w-full p-2"
+                    className="w-full"
                 />
                 {errors.fullname && <p>{errors.fullname.message}</p>}
             </div>
@@ -50,7 +50,7 @@ return (
                     placeholder={`Enter Username`}
                     {...register("username", { required: "This field is required" })}
                     ref={useRef()}
-                    className="w-full p-2"
+                    className="w-full"
                 />
                 {errors.username && <p>{errors.username.message}</p>}
             </div>
@@ -61,7 +61,7 @@ return (
                     type={`email`}
                     {...register("email", { required: "This field is required" })}
                     ref={useRef()}
-                    className="w-full p-2"
+                    className="w-full"
                 />
                 {errors.email && <p>{errors.email.message}</p>}
             </div>
@@ -72,25 +72,27 @@ return (
                     type={`password`}
                     {...register("password", { required: "This field is required" })}
                     ref={useRef()}
-                    className="w-full p-2"
+                    className="w-full"
                 />
                 {errors.password && <p>{errors.password.message}</p>}
             </div>
             <div className="mb-4">
                 <InputField
                     type={`file`}
+                    label={`Avatar`}
                     {...register("avatar", { required: "Avatar is required" })}
                     ref={useRef()}
-                    className="w-full p-2"
+                    className="w-full"
                 />
                 {errors.avatar && <p>{errors.avatar.message}</p>}
             </div>
             <div className="mb-4">
                 <InputField
                     type={`file`}
+                    label={`Cover Image`}
                     {...register("converImage")}
                     ref={useRef()}
-                    className="w-full p-2"
+                    className="w-full"
                 />
             </div>
             <Button type={`submit`} disabled={isSubmitting} className="w-full bg-blue-500 text-white py-2 px-4 rounded-md">

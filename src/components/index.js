@@ -20,6 +20,7 @@ import UserChannelProfile from './UserChannelProfile';
 import PlaylistPage from './PlaylistPage';
 import Header from './Header';
 import Footer from './Footer';
+import SideBarNavigation from './SideBarNavigation';
 
 export {
     Button,
@@ -43,5 +44,6 @@ export {
     PlaylistPage,
     UserChannelProfile,
     Header,
-    Footer
+    Footer,
+    SideBarNavigation
 }

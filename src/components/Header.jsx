@@ -9,29 +9,33 @@ const Header = () => {
     <Container>
         <div className="flex justify-between items-center">
             <div>
-            <h1 className="text-2xl font-bold">Video Platform</h1>
+            <Link to={"/"}>
+                <h1 className="text-2xl font-bold cursor-pointer">Video Platform</h1>
+            </Link>
             </div>
-            isLoggedin ? (
-                <div>
-                    UserLoggedIn
+            {
+                isLoggedIn ? (
+                    <div>
+                        UserLoggedIn
+                    </div>
+                ) : (
+                    <div className='space-x-2'>
+                    <Button className="bg-blue-500" textColor="text-white">
+                        <Link to={"/register"}>
+                            Get Started
+                        </Link>
+                    </Button>
+                    <Button>
+                        <Link to={"/login"}>
+                            Login
+                        </Link>
+                    </Button>
                 </div>
-            ) : (
-                <div>
-                <Button className="bg-blue-500" textColor="text-white">
-                    <Link to={"/login"}>
-                        Get Started
-                    </Link>
-                </Button>
-                <Button>
-                    <Link to={"/register"}>
-                        Login
-                    </Link>
-                </Button>
-            </div>
-            )
+                )
+            }
         </div>
     </Container>
   );
 }
 
-export default Header
+export default Header;
