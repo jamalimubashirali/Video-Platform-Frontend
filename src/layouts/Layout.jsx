@@ -1,8 +1,8 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { Header, Footer, SideBarNavigation } from "../components";
+import { Header, SideBarNavigation } from "../components";
 
-const Layout = ({ header = true, footer = true }) => {
+const Layout = ({ header = true , footer = true }) => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Fixed Header */}
@@ -24,8 +24,6 @@ const Layout = ({ header = true, footer = true }) => {
         </main>
       </div>
 
-      {/* Footer */}
-      {footer && <Footer />}
     </div>
   );
 };

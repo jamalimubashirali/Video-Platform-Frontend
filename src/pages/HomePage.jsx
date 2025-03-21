@@ -9,21 +9,22 @@ const HomePage = () => {
    const [loading, setLoading] = useState(true);
    const [error, setError] = useState(null);
    const navigate  = useNavigate();
-    // useEffect(() => {
-    //     ;(async () => {
-    //         try {
-    //             const videos = await videoService.(userId);
-    //             if(videos) {
-    //                 setVideos(videos);
-    //                 setLoading(false);
-    //             }
-    //         } catch (error) {
-    //             setError(error);
-    //         }
-    //     })();
-    // });
+    useEffect(() => {
+        ;(async () => {
+            try {
+                const videos = await videoService.getUserVideos();
+                if(videos) {
+                    console.log(videos);
+                    setVideos(videos.data);
+                    setLoading(false);
+                }
+            } catch (error) {
+                setError(error);
+            }
+        })();
+    });
 
-    
+
     if(loading) return <h1>Loading...</h1>;
 
   return error ? (
@@ -33,7 +34,7 @@ const HomePage = () => {
   ) : (
     <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {videos.map(video => (
+            {videos.map((video) => (
                 <VideoCard key={video._id} video={video} />
             ))}
         </div>

@@ -19,7 +19,6 @@ import Signup from './Signup';
 import UserChannelProfile from './UserChannelProfile';
 import PlaylistPage from './PlaylistPage';
 import Header from './Header';
-import Footer from './Footer';
 import SideBarNavigation from './SideBarNavigation';
 
 export {
@@ -44,6 +43,5 @@ export {
     PlaylistPage,
     UserChannelProfile,
     Header,
-    Footer,
     SideBarNavigation
 }

@@ -21,12 +21,12 @@ const Header = () => {
                 ) : (
                     <div className='space-x-2'>
                     <Button className="bg-blue-500" textColor="text-white">
-                        <Link to={"/register"}>
+                        <Link to={"auth/register"}>
                             Get Started
                         </Link>
                     </Button>
                     <Button>
-                        <Link to={"/login"}>
+                        <Link to={"auth/login"}>
                             Login
                         </Link>
                     </Button>

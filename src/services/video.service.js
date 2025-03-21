@@ -67,6 +67,15 @@ class Video {
             console.log(`Error Deleting Video: ${error}`);
         }
     }
+
+    async getAllVideos(){
+        try {
+            const response = await axios.get(`${this.baseURL}/videos`);
+            return response.data;
+        } catch (error) {
+            console.log(`Error Getting All Videos: ${error}`);
+        }   
+    }
 }
 
 const videoService = new Video();
