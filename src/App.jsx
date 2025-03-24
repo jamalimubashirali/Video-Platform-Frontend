@@ -21,7 +21,6 @@ function App() {
       .getCurrentUser()
       .then((response) => {
         if (response.data) {
-          console.log(response.data)
           dispatch(login(response.data));
         } else {
           dispatch(logout());
