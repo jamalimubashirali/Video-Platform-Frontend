@@ -14,7 +14,6 @@ const HomePage = () => {
             try {
                 const videos = await videoService.getUserVideos();
                 if(videos) {
-                    console.log(videos);
                     setVideos(videos.data);
                     setLoading(false);
                 }

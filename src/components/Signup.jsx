@@ -24,7 +24,7 @@ const Signup = () => {
       data.converImage
     );
     if (user) {
-      navigate("/login");
+      navigate("/auth/login");
     } else {
       alert("Error Creating User");
     }
@@ -38,9 +38,9 @@ return (
                 <InputField
                     label={`Full Name`}
                     placeholder={`Enter Full Name`}
-                    {...register("fullname", { required: "This field is required" })}
                     ref={useRef()}
                     className="w-full"
+                    {...register("fullname", { required: "This field is required" })}
                 />
                 {errors.fullname && <p>{errors.fullname.message}</p>}
             </div>
@@ -48,9 +48,9 @@ return (
                 <InputField
                     label={`Username`}
                     placeholder={`Enter Username`}
-                    {...register("username", { required: "This field is required" })}
                     ref={useRef()}
                     className="w-full"
+                    {...register("username", { required: "This field is required" })}
                 />
                 {errors.username && <p>{errors.username.message}</p>}
             </div>
@@ -59,9 +59,9 @@ return (
                     label={`Email`}
                     placeholder={`Enter Email`}
                     type={`email`}
-                    {...register("email", { required: "This field is required" })}
                     ref={useRef()}
                     className="w-full"
+                    {...register("email", { required: "This field is required" })}
                 />
                 {errors.email && <p>{errors.email.message}</p>}
             </div>
@@ -70,9 +70,9 @@ return (
                     label={`Password`}
                     placeholder={`Enter Password`}
                     type={`password`}
-                    {...register("password", { required: "This field is required" })}
                     ref={useRef()}
                     className="w-full"
+                    {...register("password", { required: "This field is required" })}
                 />
                 {errors.password && <p>{errors.password.message}</p>}
             </div>
@@ -80,9 +80,10 @@ return (
                 <InputField
                     type={`file`}
                     label={`Avatar`}
-                    {...register("avatar", { required: "Avatar is required" })}
                     ref={useRef()}
                     className="w-full"
+                    accept="image/png, image/jpg, image/jpeg, image/gif"
+                    {...register("avatar", { required: "Avatar is required" })}
                 />
                 {errors.avatar && <p>{errors.avatar.message}</p>}
             </div>
@@ -90,12 +91,13 @@ return (
                 <InputField
                     type={`file`}
                     label={`Cover Image`}
-                    {...register("converImage")}
                     ref={useRef()}
                     className="w-full"
+                    accept="image/png, image/jpg, image/jpeg, image/gif"
+                    {...register("converImage")}
                 />
             </div>
-            <Button type={`submit`} disabled={isSubmitting} className="w-full bg-blue-500 text-white py-2 px-4 rounded-md">
+            <Button type={`submit`} className="w-full bg-blue-500 text-white py-2 px-4 rounded-md">
                 Sign Up
             </Button>
         </form>
