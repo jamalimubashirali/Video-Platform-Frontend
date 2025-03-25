@@ -13,7 +13,6 @@ const Login = () => {
     
     // Login Function
     const loginUser = async (data) => {
-        console.log(data);
         const user = await authService.login(data.email, data.password);
         if (user) {
             dispatch(login(user));

@@ -12,14 +12,14 @@ const VideoDesAndChannel = ({
 }) => {
   const [subscribers, setSubscribers] = useState(0);
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       const subscribers = await subscriptionService.getSubscribers(channelId);
       setSubscribers(subscribers);
     })();
-  });
+  } , []);
 
   const handleSubscribe = async (channelId) => {
-    const subsribed = await subscriptionService.addOrRemoveSubscription(
+    await subscriptionService.addOrRemoveSubscription(
       channelId
     );
   };

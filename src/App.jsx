@@ -43,7 +43,7 @@ function App() {
           element: <Layout />,
           children: [
             { index: true, element: <HomePage /> }, 
-            { path: "user-profile", element: <UserProfile /> },
+            { path: "user-profile/:id", element: <UserProfile /> },
           ],
         },
         {

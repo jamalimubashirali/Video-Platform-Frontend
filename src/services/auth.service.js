@@ -20,7 +20,7 @@ class Authentication {
                 headers: { "Content-Type": "multipart/form-data" }
             });
 
-            return response.data;
+            return response.data.data;
         } catch (error) {
             console.log(`Error Creating User: ${error}`);
         }

@@ -24,7 +24,7 @@ const UserChannelProfile = ({userId}) => {
                 setLoading(false);
             }
         })();
-    });
+    } , []);
 
     if(loading){
         return <p>Loading...</p>
